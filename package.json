@@ -27,6 +27,7 @@
     "react": "^16.3.2",
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.3.2",
+    "reset-css": "^3.0.0",
     "resolve": "1.6.0",
     "sass-loader": "^7.0.1",
     "source-map-loader": "^0.2.1",
