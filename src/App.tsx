@@ -1,11 +1,15 @@
 import * as React from "react";
 import styles from "./App.scss";
+import Board from "./components/Board";
+import Navigation from "./components/Navigation";
 import Todo from "./components/Todo";
 
-const App = () => {
+const App = (props: any) => {
   return (
     <div className={styles.app}>
+      <Navigation />
       <Todo />
+      <Board />
     </div>
   );
 };
