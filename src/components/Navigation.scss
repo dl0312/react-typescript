@@ -1,0 +1,81 @@
+.navigation {
+  width: 100%;
+  .mini-nav {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+
+    padding-left: 120px;
+    background-color: $dark-blue;
+    min-width: $max-page-width;
+    color: white;
+    .mfn {
+      .text {
+      }
+    }
+    .site {
+      .name {
+        font-size: $normal-font-size;
+        color: #95c0e9;
+      }
+    }
+  }
+  .inner {
+    min-width: $max-page-width;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    background-color: #0f2f4e;
+    .title-column {
+      min-width: 335px;
+      .logo {
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        width: 100px;
+      }
+      .title {
+        margin-left: 210px;
+        padding-top: 10px;
+        width: 80px;
+      }
+      .subtitle {
+        display: block;
+        margin-left: 190px;
+        font-size: $small-font-size;
+        padding-top: 2px;
+        font-weight: 600;
+        color: white;
+      }
+    }
+    .column {
+      min-width: 140px;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      &:nth-child(2) {
+        background-color: $soft-dark-blue;
+
+        min-width: 160px;
+      }
+      &:nth-child(3) {
+        min-width: 180px;
+      }
+      .title {
+        padding-bottom: 4px;
+        position: relative;
+        font-size: $big-font-size + 2;
+      }
+      .subtitle {
+        text-transform: uppercase;
+        font-size: $small-font-size;
+        color: #95c0e9;
+      }
+      .checkbox {
+        width: 30px;
+      }
+      .search-text {
+      }
+    }
+  }
+}

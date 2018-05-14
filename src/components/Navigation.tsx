@@ -24,6 +24,17 @@ class Navigation extends React.Component<{}, IState> {
     console.log(this.state);
     return (
       <div className={styles.navigation}>
+        <div className={styles.miniNav}>
+          <div className={styles.mfn}>
+            <div className={styles.text}>MFN</div>
+          </div>
+          <div className={styles.site}>
+            <div className={styles.name}>vainglory</div>
+          </div>
+          <div className={styles.site}>
+            <div className={styles.name}>leaguespy</div>
+          </div>
+        </div>
         <div className={styles.inner}>
           <div className={styles.titleColumn}>
             <img
@@ -64,7 +75,7 @@ class Navigation extends React.Component<{}, IState> {
               placeholder={"search"}
               className={styles.checkbox}
             />
-            <span className={styles.title}>
+            <span className={styles.searchText}>
               {this.state.search ? "SEARCH" : "CLOSE"}
             </span>
           </div>
