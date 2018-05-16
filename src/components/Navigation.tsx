@@ -1,4 +1,5 @@
 import * as React from "react";
+import Ionicon from "react-ionicons";
 import styles from "./Navigation.scss";
 
 interface IState {
@@ -29,10 +30,41 @@ class Navigation extends React.Component<{}, IState> {
             <div className={styles.text}>MFN</div>
           </div>
           <div className={styles.site}>
-            <div className={styles.name}>vainglory</div>
+            <img
+              src={require("../images/Hearthstone-Logo.png")}
+              className={styles.logo}
+              alt={"logo"}
+            />
+            <div className={styles.name}>hearthstone</div>
           </div>
           <div className={styles.site}>
-            <div className={styles.name}>leaguespy</div>
+            <img
+              src={require("../images/logo_opgg.png")}
+              className={styles.logo}
+              alt={"logo"}
+            />
+            <div className={styles.name}>opgg</div>
+          </div>
+          <div className={styles.site} />
+          <a
+            href={"https://www.mobafire.com/network-log-in"}
+            className={styles.site}
+          >
+            <div className={styles.name}>join now</div>
+          </a>
+          <a
+            href={"https://www.mobafire.com/network-log-in"}
+            className={styles.site}
+          >
+            <div className={styles.name}>log in</div>
+          </a>
+          <div className={styles.site}>
+            <div className={styles.social}>social login</div>
+            <img
+              src={require("../images/logo_opgg.png")}
+              className={styles.logo}
+              alt={"logo"}
+            />
           </div>
         </div>
         <div className={styles.inner}>
@@ -69,15 +101,19 @@ class Navigation extends React.Component<{}, IState> {
             <div className={styles.title}>Community</div>
             <div className={styles.subtitle}>mobafire</div>
           </div>
-          <div className={styles.column}>
-            <input
-              onClick={this.toggle}
-              placeholder={"search"}
-              className={styles.checkbox}
-            />
+          {/* <div className={styles.column}>
+            <input onClick={this.toggle} placeholder={"search"} className={styles.checkbox} />
             <span className={styles.searchText}>
               {this.state.search ? "SEARCH" : "CLOSE"}
             </span>
+          </div> */}
+          <div className={styles.column}>
+            <button onClick={this.toggle} className={styles.btn}>
+              <Ionicon icon="ios-search" fontSize="25px" color="white" />
+              <span className={styles.searchText}>
+                {!this.state.search ? "SEARCH" : "CLOSE"}
+              </span>
+            </button>
           </div>
         </div>
       </div>

@@ -1,0 +1,12 @@
+.board {
+  min-width: $max-page-width;
+  padding: 15px 30px;
+  display: flex;
+  align-content: center;
+  border-bottom: 1px solid black;
+  justify-content: center;
+  .post {
+  }
+  .nav {
+  }
+}

@@ -4,48 +4,79 @@
     height: 30px;
     display: flex;
     justify-content: center;
-
-    padding-left: 120px;
+    align-items: center;
     background-color: $dark-blue;
     min-width: $max-page-width;
     color: white;
     .mfn {
+      padding: 0 10px;
+      height: 30px;
+      display: flex;
+      align-items: center;
       .text {
       }
     }
     .site {
+      height: 30px;
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+
+      &:nth-child(3) {
+        min-width: 500px;
+      }
+
+      &:nth-child(4) {
+        .name {
+          color: #e79a0c;
+        }
+      }
+      .logo {
+        width: 25px;
+        margin-right: 5px;
+      }
       .name {
         font-size: $normal-font-size;
         color: #95c0e9;
+        text-transform: uppercase;
+      }
+      .social {
+        font-size: $small-font-size - 2;
+        color: #95c0e9;
+        text-transform: uppercase;
       }
     }
   }
   .inner {
     min-width: $max-page-width;
+
     height: 65px;
     display: flex;
     justify-content: center;
-    background-color: #0f2f4e;
+    background-color: #1c2a45;
+    border-bottom: 1px solid black;
     .title-column {
-      min-width: 335px;
+      min-width: 235px;
+      max-width: 250px;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       .logo {
-        position: absolute;
-        top: 10px;
-        left: 15px;
-        width: 100px;
+        width: 50px;
+        margin-left: 5px;
+        margin-right: 5px;
       }
       .title {
-        margin-left: 210px;
-        padding-top: 10px;
-        width: 80px;
+        width: 100px;
       }
       .subtitle {
         display: block;
-        margin-left: 190px;
-        font-size: $small-font-size;
-        padding-top: 2px;
-        font-weight: 600;
-        color: white;
+        font-size: $small-font-size - 2;
+        font-weight: 200;
+        color: #a8bbce;
+        text-align: center;
+        text-transform: uppercase;
       }
     }
     .column {
@@ -61,6 +92,9 @@
       &:nth-child(3) {
         min-width: 180px;
       }
+      &:last-child {
+        padding: 0;
+      }
       .title {
         padding-bottom: 4px;
         position: relative;
@@ -71,10 +105,27 @@
         font-size: $small-font-size;
         color: #95c0e9;
       }
-      .checkbox {
-        width: 30px;
+      .btn {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background-color: $soft-dark-blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+        .search-text {
+          padding: 0 5px;
+          font-weight: 800;
+          color: #b2b9be;
+        }
       }
-      .search-text {
+      .btn:hover {
+        background-color: rgb(83, 116, 148);
+        .search-text {
+          padding: 0 5px;
+          color: #ffffff;
+        }
       }
     }
   }

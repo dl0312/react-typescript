@@ -1,0 +1,57 @@
+.postlist {
+  width: 800px;
+  color: white;
+  .explain {
+    .title {
+      font-size: $big-font-size;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin: 15px 0;
+    }
+    .subtitle {
+      font-size: $normal-font-size;
+      line-height: 15px;
+      color: $dark-grey;
+      .commendation {
+      }
+      .create-guide-text {
+      }
+    }
+  }
+  .search {
+    .chamption {
+      .title {
+      }
+      .input {
+      }
+      .more {
+      }
+    }
+    .lane {
+      .title {
+      }
+      .btn {
+        .img {
+        }
+        .text {
+        }
+      }
+    }
+    .category {
+      .title {
+        .btn {
+          .text {
+          }
+        }
+      }
+    }
+    .depth {
+      .title {
+      }
+      .btn {
+        .text {
+        }
+      }
+    }
+  }
+}
