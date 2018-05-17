@@ -8,12 +8,14 @@ class Board extends React.Component<{}> {
   public render() {
     return (
       <div className={styles.board}>
-        <div className={styles.post}>
-          <PostDetail />
-          <PostList />
-        </div>
-        <div className={styles.nav}>
-          <DatabaseNav />
+        <div className={styles.inner}>
+          <div className={styles.post}>
+            <PostDetail />
+            <PostList />
+          </div>
+          <div className={styles.nav}>
+            <DatabaseNav />
+          </div>
         </div>
       </div>
     );

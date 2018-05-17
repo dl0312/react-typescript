@@ -81,26 +81,26 @@ class Navigation extends React.Component<{}, IState> {
             />
             <span className={styles.subtitle}>Share your game guide</span>
           </div>
-          <div className={styles.column}>
+          <button className={styles.column}>
             <div className={styles.title}>Create Guide</div>
             <div className={styles.subtitle}>the builder</div>
-          </div>
-          <div className={styles.column}>
+          </button>
+          <button className={styles.column}>
             <div className={styles.title}>Builds & Guides</div>
             <div className={styles.subtitle}>league of legends</div>
-          </div>
-          <div className={styles.column}>
+          </button>
+          <button className={styles.column}>
             <div className={styles.title}>Champions</div>
             <div className={styles.subtitle}>build stats</div>
-          </div>
-          <div className={styles.column}>
+          </button>
+          <button className={styles.column}>
             <div className={styles.title}>Tier Lists</div>
             <div className={styles.subtitle}>rank champions</div>
-          </div>
-          <div className={styles.column}>
+          </button>
+          <button className={styles.column}>
             <div className={styles.title}>Community</div>
             <div className={styles.subtitle}>mobafire</div>
-          </div>
+          </button>
           {/* <div className={styles.column}>
             <input onClick={this.toggle} placeholder={"search"} className={styles.checkbox} />
             <span className={styles.searchText}>
@@ -109,7 +109,11 @@ class Navigation extends React.Component<{}, IState> {
           </div> */}
           <div className={styles.column}>
             <button onClick={this.toggle} className={styles.btn}>
-              <Ionicon icon="ios-search" fontSize="25px" color="white" />
+              {!this.state.search ? (
+                <Ionicon icon="ios-search" fontSize="25px" color="white" />
+              ) : (
+                <Ionicon icon="ios-close" fontSize="25px" color="white" />
+              )}
               <span className={styles.searchText}>
                 {!this.state.search ? "SEARCH" : "CLOSE"}
               </span>

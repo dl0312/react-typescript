@@ -84,10 +84,17 @@
       color: white;
       text-align: center;
       padding: 15px;
+      border: none;
+      background-color: #1c2a45;
+      transition: 1s;
+      cursor: pointer;
       &:nth-child(2) {
         background-color: $soft-dark-blue;
 
         min-width: 160px;
+      }
+      &:nth-child(2):hover {
+        background-color: #4a7fc9;
       }
       &:nth-child(3) {
         min-width: 180px;
@@ -114,6 +121,7 @@
         justify-content: center;
         align-items: center;
         transition: 1s;
+        cursor: pointer;
         .search-text {
           padding: 0 5px;
           font-weight: 800;
@@ -122,11 +130,16 @@
       }
       .btn:hover {
         background-color: rgb(83, 116, 148);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
         .search-text {
           padding: 0 5px;
           color: #ffffff;
         }
       }
+    }
+    .column:hover {
+      background-color: #506691;
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     }
   }
 }

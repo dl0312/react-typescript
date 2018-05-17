@@ -1,4 +1,5 @@
 import * as React from "react";
+import Ionicon from "react-ionicons";
 import styles from "./PostList.scss";
 
 class PostList extends React.Component<{}> {
@@ -27,8 +28,18 @@ class PostList extends React.Component<{}> {
         </div>
         <div className={styles.search}>
           <div className={styles.champion}>
-            <div className={styles.title}>champion:</div>
-            <input className={styles.input} type="text" />
+            <div className={styles.left}>
+              <div className={styles.title}>champion:</div>
+              <div className={styles.input}>
+                <Ionicon
+                  className={styles.icon}
+                  icon="ios-search"
+                  fontSize="25px"
+                  color="white"
+                />
+                <input className={styles.realInput} type="text" />
+              </div>
+            </div>
             <div className={styles.more}>view champions >></div>
           </div>
           <div className={styles.lane}>
