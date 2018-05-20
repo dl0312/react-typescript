@@ -26,5 +26,15 @@
     "jest",
     "src/setupTests.ts"
   ],
-  "typeRoots": ["./node_modules/@types", "./@types"]
+  "typeRoots": ["./node_modules/@types", "./@types"],
+  "ordered-imports": true,
+  "ordered-imports": [
+    true,
+    {
+      "import-sources-order": "lowercase-last",
+      "grouped-imports": true,
+      "named-imports-order": "lowercase-first",
+      "module-source-path": "basename"
+    }
+  ]
 }

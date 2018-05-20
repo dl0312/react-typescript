@@ -374,6 +374,11 @@ module.exports = {
       async: false,
       tsconfig: paths.appTsConfig,
       tslint: paths.appTsLint
+    }),
+
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
     })
   ],
   // Some libraries import Node modules but don't use them in the browser.

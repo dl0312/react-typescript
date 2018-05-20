@@ -1,15 +1,17 @@
 import * as React from "react";
 import styles from "./App.scss";
-import Board from "./components/Board";
+// import Board from "./components/Board";
+import MyEditor from "./components/MyEditor";
 import Navigation from "./components/Navigation";
-import Todo from "./components/Todo";
+// import Todo from "./components/Todo";
 
 const App = (props: any) => {
   return (
     <div className={styles.app}>
       <Navigation />
-      <Todo />
-      <Board />
+      {/* <Todo /> */}
+      <MyEditor />
+      {/* <Board /> */}
     </div>
   );
 };
