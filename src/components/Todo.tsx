@@ -62,7 +62,6 @@ class Todo extends React.Component<{}, IState, ITask> {
   }
 
   public render() {
-    console.log(this.state);
     return (
       <div className={styles.app}>
         <h1 className={styles.title}>React Typescript Todo List </h1>
