@@ -39,24 +39,7 @@ class Wikiimage extends React.Component<{}, IState> {
             alt={"mini"}
           />
         </div>
-        <span
-          style={{
-            border: 0,
-            position: "absolute",
-            visibility: this.state.isInArea ? "visible" : "hidden",
-            top:
-              this.state.pos.y > 400
-                ? this.state.pos.y - 400
-                : this.state.pos.y - 150,
-            left: this.state.pos.x + 20
-          }}
-        >
-          <img
-            src={require("../images/keleseth.gif")}
-            className={styles.origin}
-            alt={"origin"}
-          />
-        </span>
+        <PopupImage isInArea={this.state.isInArea} pos={this.state.pos} />
         <div>
           x ${this.state.pos.x} y ${this.state.pos.y}
         </div>
@@ -64,5 +47,25 @@ class Wikiimage extends React.Component<{}, IState> {
     );
   }
 }
+
+const PopupImage = (props: any) => {
+  return (
+    <span
+      style={{
+        border: 0,
+        position: "absolute",
+        visibility: props.isInArea ? "visible" : "hidden",
+        top: props.pos.y > 400 ? props.pos.y - 400 : props.pos.y - 150,
+        left: props.pos.x + 20
+      }}
+    >
+      <img
+        src={require("../images/keleseth.gif")}
+        className={styles.origin}
+        alt={"origin"}
+      />
+    </span>
+  );
+};
 
 export default Wikiimage;
