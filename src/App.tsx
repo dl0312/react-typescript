@@ -3,15 +3,19 @@ import styles from "./App.scss";
 // import Board from "./components/Board";
 import MyEditor from "./components/MyEditor";
 import Navigation from "./components/Navigation";
+import Wiki from "./components/Wiki";
 // import Todo from "./components/Todo";
 
 const App = (props: any) => {
   return (
     <div className={styles.app}>
       <Navigation />
-      {/* <Todo /> */}
-      <MyEditor />
-      {/* <Board /> */}
+      <div className={styles.content}>
+        {/* <Todo /> */}
+        <MyEditor />
+        {/* <Board /> */}
+        <Wiki />
+      </div>
     </div>
   );
 };
