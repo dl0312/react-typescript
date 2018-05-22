@@ -1,4 +1,6 @@
 import * as React from "react";
+import { NavLink } from "react-router-dom";
+
 import Ionicon from "react-ionicons";
 import styles from "./Navigation.scss";
 
@@ -29,14 +31,14 @@ class Navigation extends React.Component<{}, IState> {
           <div className={styles.mfn}>
             <div className={styles.text}>MFN</div>
           </div>
-          <div className={styles.site}>
+          <NavLink to="/" className={styles.site}>
             <img
               src={require("../images/Hearthstone-Logo.png")}
               className={styles.logo}
               alt={"logo"}
             />
             <div className={styles.name}>hearthstone</div>
-          </div>
+          </NavLink>
           <div className={styles.site}>
             <img
               src={require("../images/logo_opgg.png")}
@@ -68,7 +70,7 @@ class Navigation extends React.Component<{}, IState> {
           </div>
         </div>
         <div className={styles.inner}>
-          <div className={styles.titleColumn}>
+          <NavLink to="/" className={styles.titleColumn}>
             <img
               src={require("../images/claplogo.png")}
               className={styles.logo}
@@ -80,27 +82,27 @@ class Navigation extends React.Component<{}, IState> {
               alt={"title"}
             />
             <span className={styles.subtitle}>Share your game guide</span>
-          </div>
-          <button className={styles.column}>
+          </NavLink>
+          <NavLink to="/board" className={styles.column}>
             <div className={styles.title}>Create Guide</div>
             <div className={styles.subtitle}>the builder</div>
-          </button>
-          <button className={styles.column}>
+          </NavLink>
+          <NavLink to="/wiki" className={styles.column}>
             <div className={styles.title}>Builds & Guides</div>
             <div className={styles.subtitle}>league of legends</div>
-          </button>
-          <button className={styles.column}>
+          </NavLink>
+          <NavLink to="/myeditor" className={styles.column}>
             <div className={styles.title}>Champions</div>
             <div className={styles.subtitle}>build stats</div>
-          </button>
-          <button className={styles.column}>
+          </NavLink>
+          <NavLink to="/todo" className={styles.column}>
             <div className={styles.title}>Tier Lists</div>
             <div className={styles.subtitle}>rank champions</div>
-          </button>
-          <button className={styles.column}>
+          </NavLink>
+          <NavLink to="/" className={styles.column}>
             <div className={styles.title}>Community</div>
             <div className={styles.subtitle}>mobafire</div>
-          </button>
+          </NavLink>
           {/* <div className={styles.column}>
             <input onClick={this.toggle} placeholder={"search"} className={styles.checkbox} />
             <span className={styles.searchText}>

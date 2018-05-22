@@ -1,5 +1,6 @@
 import { convertToRaw, Editor, EditorState, RichUtils } from "draft-js";
 import * as React from "react";
+import "react-bootstrap";
 import styles from "./MyEditor.scss";
 import StyleButton from "./StyleButton";
 
@@ -106,25 +107,31 @@ class MyEditor extends React.Component<{}, IState> {
     }
     const raw = convertToRaw(this.state.editorState.getCurrentContent());
     return (
-      <div className={styles.editor}>
-        <BlockStyleControls
-          editorState={editorState}
-          onToggle={this.toggleBlockType}
-        />
-        <InlineStyleControls
-          editorState={editorState}
-          onToggle={this.toggleInlineStyle}
-        />
-        <Editor
-          blockStyleFn={getBlockStyle}
-          customStyleMap={styleMap}
-          editorState={this.state.editorState}
-          handleKeyCommend={this.handleKeyCommend}
-          onChange={this.handleChange}
-          placeholder="Write you guide"
-          spellCheck={true}
-        />
-        <div>{JSON.stringify(raw)}</div>
+      <div className={styles.myeditor}>
+        <div className={styles.fontStyle}>
+          <BlockStyleControls
+            className={styles.btnList}
+            editorState={editorState}
+            onToggle={this.toggleBlockType}
+          />
+          <InlineStyleControls
+            className={styles.btnList}
+            editorState={editorState}
+            onToggle={this.toggleInlineStyle}
+          />
+        </div>
+        <div className={styles.editor}>
+          <Editor
+            blockStyleFn={getBlockStyle}
+            customStyleMap={styleMap}
+            editorState={this.state.editorState}
+            handleKeyCommend={this.handleKeyCommend}
+            onChange={this.handleChange}
+            placeholder="Write you guide"
+            spellCheck={true}
+          />
+        </div>
+        <div className={styles.json}>{JSON.stringify(raw)}</div>
       </div>
     );
   }
@@ -142,7 +149,7 @@ const BlockStyleControls = (props: any) => {
   return (
     <div className="RichEditor-controls">
       {BLOCK_TYPES.map(type => (
-        <button>
+        <button className={styles.btn}>
           <StyleButton
             key={type.label}
             active={type.style === blockType}
@@ -161,7 +168,7 @@ const InlineStyleControls = (props: any) => {
   return (
     <div className="RichEditor-controls">
       {INLINE_STYLES.map(type => (
-        <button>
+        <button className={styles.btn}>
           <StyleButton
             key={type.label}
             active={currentStyle.has(type.style)}
