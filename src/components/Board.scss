@@ -1,22 +1,18 @@
 .board {
-  width: 100%;
+  min-width: $max-page-width;
   display: flex;
+  align-items: center;
   justify-content: center;
-  .inner {
-    min-width: $max-page-width;
-    max-width: $max-page-width + 50px;
-    display: flex;
-    align-items: center;
+  flex-direction: row;
+  padding: 15px 30px;
+  .post {
+    max-width: 760px;
+    align-content: center;
+    border-bottom: 1px solid black;
     justify-content: center;
-    min-width: $max-page-width;
-
-    padding: 15px 30px;
-    .post {
-      align-content: center;
-      border-bottom: 1px solid black;
-      justify-content: center;
-    }
-    .nav {
-    }
+    margin-right: 30px;
+  }
+  .nav {
+    max-width: 300px;
   }
 }

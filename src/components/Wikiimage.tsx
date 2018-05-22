@@ -17,7 +17,7 @@ class Wikiimage extends React.Component<{}, IState> {
   }
 
   public getPos = (e: any): void => {
-    const pos: Pos = new Pos(e.clientX, e.screenY);
+    const pos: Pos = new Pos(e.clientX, e.clientY);
     this.setState({ pos, isInArea: true });
   };
 
@@ -28,6 +28,7 @@ class Wikiimage extends React.Component<{}, IState> {
   public render() {
     return (
       <div className={styles.wikiImage}>
+        <div className={styles.title}>Wiki Images</div>
         <div
           onMouseMove={this.getPos}
           onMouseOut={this.stopTracking}
@@ -40,7 +41,7 @@ class Wikiimage extends React.Component<{}, IState> {
           />
         </div>
         <PopupImage isInArea={this.state.isInArea} pos={this.state.pos} />
-        <div>
+        <div className={styles.pos}>
           x ${this.state.pos.x} y ${this.state.pos.y}
         </div>
       </div>
@@ -55,7 +56,7 @@ const PopupImage = (props: any) => {
         border: 0,
         position: "absolute",
         visibility: props.isInArea ? "visible" : "hidden",
-        top: props.pos.y > 400 ? props.pos.y - 400 : props.pos.y - 150,
+        top: props.pos.y - 100,
         left: props.pos.x + 20
       }}
     >

@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "./App.scss";
 // import Board from "./components/Board";
-import MyEditor from "./components/MyEditor";
+// import MyEditor from "./components/MyEditor";
 import Navigation from "./components/Navigation";
 import Wiki from "./components/Wiki";
 // import Todo from "./components/Todo";
@@ -12,7 +12,7 @@ const App = (props: any) => {
       <Navigation />
       <div className={styles.content}>
         {/* <Todo /> */}
-        <MyEditor />
+        {/* <MyEditor /> */}
         {/* <Board /> */}
         <Wiki />
       </div>

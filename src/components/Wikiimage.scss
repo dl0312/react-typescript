@@ -1,12 +1,26 @@
 .wiki-image {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  .title {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: white;
+  }
   .thumb {
     cursor: pointer;
     .mini {
     }
-    .mini:hover {
-    }
-    .origin {
-    }
+  }
+  .pos {
+    display: flex;
+    justify-content: center;
+    color: white;
   }
   // .thumb:hover {
   //   border: 0; /* IE6 needs this to show large image */

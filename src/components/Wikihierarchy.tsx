@@ -1,5 +1,8 @@
 import * as React from "react";
-import styles from "./Wikihierarchy.scss";
+import SortableTree from "react-sortable-tree";
+import FileExplorerTheme from "react-sortable-tree-theme-full-node-drag";
+
+import "react-sortable-tree/style.css";
 
 // class Element {
 //   public name: string;
@@ -29,15 +32,39 @@ import styles from "./Wikihierarchy.scss";
 //   return newElement;
 // };
 
-class Wikihierarchy extends React.Component<{}> {
+interface IState {
+  treeData: object[];
+}
+
+class Wikihierarchy extends React.Component<{}, IState> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      treeData: [
+        {
+          title: "Chicken",
+          children: [
+            {
+              title: "Egg"
+            }
+          ]
+        }
+      ]
+    };
+  }
+
+  public handleChange = (treeData: object[]): void => {
+    this.setState({ treeData });
+  };
+
   public render() {
     return (
-      <div className={styles.hierarchy}>
-        <ul>
-          <li>
-            <ul>league of legend</ul>
-          </li>
-        </ul>
+      <div style={{ height: 400 }}>
+        <SortableTree
+          treeData={this.state.treeData}
+          onChange={this.handleChange}
+          theme={FileExplorerTheme}
+        />
       </div>
     );
   }

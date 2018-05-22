@@ -3,6 +3,8 @@ declare module "react-ionicons";
 declare module "react-summernote";
 declare module "bootstrap";
 declare module "draft-js";
+declare module "react-sortable-tree";
+declare module "react-sortable-tree-theme-full-node-drag";
 declare module "react-draft-wysiwyg" {
   import * as React from "react";
 

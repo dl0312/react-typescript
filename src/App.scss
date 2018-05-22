@@ -18,6 +18,11 @@ img {
 .app {
   width: 100%;
   .content {
-    background-color: white;
+    display: flex;
+    min-width: $max-page-width;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
   }
 }
