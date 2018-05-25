@@ -1,8 +1,45 @@
-import { convertToRaw, Editor, EditorState, RichUtils } from "draft-js";
+import { convertToRaw, EditorState, RichUtils } from "draft-js";
+import createAlignmentPlugin from "draft-js-alignment-plugin";
+import createBlockDndPlugin from "draft-js-drag-n-drop-plugin";
+import createFocusPlugin from "draft-js-focus-plugin";
+import createHashtagPlugin from "draft-js-hashtag-plugin";
+import createLinkifyPlugin from "draft-js-linkify-plugin";
+// import createDragNDropUploadPlugin from "draft-js-drag-n-drop-upload-plugin";
+
+import createImagePlugin from "draft-js-image-plugin";
+import Editor, { composeDecorators } from "draft-js-plugins-editor";
+import createResizeablePlugin from "draft-js-resizeable-plugin";
+
 import * as React from "react";
 import "react-bootstrap";
 import styles from "./MyEditor.scss";
 import StyleButton from "./StyleButton";
+
+const focusPlugin = createFocusPlugin();
+const resizeablePlugin = createResizeablePlugin();
+const blockDndPlugin = createBlockDndPlugin();
+const alignmentPlugin = createAlignmentPlugin();
+const hashtagPlugin = createHashtagPlugin();
+const linkifyPlugin = createLinkifyPlugin();
+
+const decorator = composeDecorators(
+  resizeablePlugin.decorator,
+  alignmentPlugin.decorator,
+  focusPlugin.decorator,
+  blockDndPlugin.decorator
+);
+
+const imagePlugin = createImagePlugin({ decorator });
+
+const plugins = [
+  blockDndPlugin,
+  focusPlugin,
+  alignmentPlugin,
+  resizeablePlugin,
+  imagePlugin,
+  hashtagPlugin,
+  linkifyPlugin
+];
 
 const INLINE_STYLES = [
   { label: "Bold", style: "BOLD" },
@@ -108,6 +145,7 @@ class MyEditor extends React.Component<{}, IState> {
     const raw = convertToRaw(this.state.editorState.getCurrentContent());
     return (
       <div className={styles.myeditor}>
+        <div className={styles.title}>guide editor</div>
         <div className={styles.fontStyle}>
           <BlockStyleControls
             className={styles.btnList}
@@ -129,6 +167,7 @@ class MyEditor extends React.Component<{}, IState> {
             onChange={this.handleChange}
             placeholder="Write you guide"
             spellCheck={true}
+            plugins={plugins}
           />
         </div>
         <div className={styles.json}>{JSON.stringify(raw)}</div>

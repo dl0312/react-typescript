@@ -2,7 +2,19 @@ declare module "react-router-dom";
 declare module "react-ionicons";
 declare module "react-summernote";
 declare module "bootstrap";
+declare module "axios";
+
 declare module "draft-js";
+declare module "draft-js-plugins-editor";
+declare module "draft-js-image-plugin";
+declare module "draft-js-alignment-plugin";
+declare module "draft-js-focus-plugin";
+declare module "draft-js-resizeable-plugin";
+declare module "draft-js-drag-n-drop-plugin";
+declare module "draft-js-drag-n-drop-upload-plugin";
+declare module "draft-js-hashtag-plugin";
+declare module "draft-js-linkify-plugin";
+
 declare module "react-sortable-tree";
 declare module "react-sortable-tree-theme-full-node-drag";
 declare module "react-draft-wysiwyg" {
