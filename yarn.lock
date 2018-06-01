@@ -2270,6 +2270,26 @@ draft-js-buttons@^2.0.1:
   dependencies:
     union-class-names "^1.0.0"
 
+draft-js-drag-n-drop-plugin@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/draft-js-drag-n-drop-plugin/-/draft-js-drag-n-drop-plugin-2.0.3.tgz#3954c2340520e27375fddfa1103c2e1682b7b6c1"
+  dependencies:
+    decorate-component-with-props "^1.0.2"
+    find-with-regex "^1.1.3"
+    immutable "~3.7.4"
+    prop-types "^15.5.8"
+    union-class-names "^1.0.0"
+
+draft-js-focus-plugin@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/draft-js-focus-plugin/-/draft-js-focus-plugin-2.0.4.tgz#1eda9f4a1e1130110868618e387878cf5ab0838a"
+  dependencies:
+    decorate-component-with-props "^1.0.2"
+    find-with-regex "^1.1.3"
+    immutable "~3.7.4"
+    prop-types "^15.5.8"
+    union-class-names "^1.0.0"
+
 draft-js-hashtag-plugin@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/draft-js-hashtag-plugin/-/draft-js-hashtag-plugin-2.0.3.tgz#3b42ea8b4a2fc0df05ae5f993c080d723e1f7aea"

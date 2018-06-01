@@ -145,32 +145,34 @@ class MyEditor extends React.Component<{}, IState> {
     const raw = convertToRaw(this.state.editorState.getCurrentContent());
     return (
       <div className={styles.myeditor}>
-        <div className={styles.title}>guide editor</div>
-        <div className={styles.fontStyle}>
-          <BlockStyleControls
-            className={styles.btnList}
-            editorState={editorState}
-            onToggle={this.toggleBlockType}
-          />
-          <InlineStyleControls
-            className={styles.btnList}
-            editorState={editorState}
-            onToggle={this.toggleInlineStyle}
-          />
+        <div className="RichEditor-root">
+          <div className={styles.title}>guide editor</div>
+          <div className={styles.fontStyle}>
+            <BlockStyleControls
+              className={styles.btnList}
+              editorState={editorState}
+              onToggle={this.toggleBlockType}
+            />
+            <InlineStyleControls
+              className={styles.btnList}
+              editorState={editorState}
+              onToggle={this.toggleInlineStyle}
+            />
+          </div>
+          <div className={styles.editor}>
+            <Editor
+              blockStyleFn={getBlockStyle}
+              customStyleMap={styleMap}
+              editorState={this.state.editorState}
+              handleKeyCommend={this.handleKeyCommend}
+              onChange={this.handleChange}
+              placeholder="Write you guide"
+              spellCheck={true}
+              plugins={plugins}
+            />
+          </div>
+          <div className={styles.json}>{JSON.stringify(raw)}</div>
         </div>
-        <div className={styles.editor}>
-          <Editor
-            blockStyleFn={getBlockStyle}
-            customStyleMap={styleMap}
-            editorState={this.state.editorState}
-            handleKeyCommend={this.handleKeyCommend}
-            onChange={this.handleChange}
-            placeholder="Write you guide"
-            spellCheck={true}
-            plugins={plugins}
-          />
-        </div>
-        <div className={styles.json}>{JSON.stringify(raw)}</div>
       </div>
     );
   }

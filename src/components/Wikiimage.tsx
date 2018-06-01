@@ -60,6 +60,7 @@ const PopupImage = (props: any) => {
         left: props.pos.x + 20
       }}
     >
+      <div style={{ color: "white" }}> 안녕하세요 팝업이미지입니다.</div>
       <img
         src={require("../images/keleseth.gif")}
         className={styles.origin}
